@@ -2,67 +2,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lisa Private Car Vietnam</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { background: #f5f7fa; color: #333; }
-    header { background: url('https://images.unsplash.com/photo-1603349206294-bbb4c51b9e44?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; height: 100vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
-    header h1 { font-size: 3em; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
-    header p { font-size: 1.2em; margin-top: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-    .btn { background: #ff6600; color: white; padding: 12px 25px; border: none; border-radius: 5px; margin-top: 20px; font-size: 1em; cursor: pointer; text-decoration: none; }
-    .btn:hover { background: #e65c00; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lisa Private Car - Vietnam</title>
+<style>
+  /* Reset & basics */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
 
-    nav { position: absolute; top: 20px; right: 30px; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+  /* Navbar */
+  nav {
+    background: #212529;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ff5500;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+  }
+  nav ul li a:hover {
+    background: #ff5500;
+border-radius: 4px;
+  }
 
-    main { padding: 50px 20px; max-width: 1000px; margin: auto; text-align: center; }
-    .route-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-    .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.2s ease; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 160px; object-fit: cover; }
-    .card h3 { padding: 15px; font-size: 1.2em; }
-    footer { text-align: center; padding: 20px; background: #004080; color: white; margin-top: 50px; }
-  </style>
+  /* Hero section */
+  header {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('https://i.imgur.com/R4mKaOJ.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 15px;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  header p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1.2px;
+  }
+  header button {
+    background: #ff5500;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgb(255 85 0 / 0.5);
+    transition: background 0.3s ease;
+  }
+  header button:hover {
+    background: #cc4400;
+  }
+
+  /* Popular routes */
+  section.routes {
+    background: white;
+    padding: 50px 20px 70px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 0.05);
+    border-radius: 10px;
+    margin: -70px auto 50px;
+    max-width: 1100px;
+  }
+  section.routes h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2rem;
+    color: #212529;
+  }
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+  }
+  .route-card {
+    background: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .route-card:hover {
+    transform: scale(1.05);
+  }
+  .route-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .route-card h3 {
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ff5500;
+  }
+
+  /* Footer */
+  footer {
+    background: #212529;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(25px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="routes.html">Routes</a>
-    <a href="booking.html">Booking</a>
-  </nav>
+<nav>
+  <div class="container">
+    <div class="logo">Lisa Private Car</div>
+    <ul>
+      <li><a href="#routes">Popular Routes</a></li>
+      <li><a href="#book">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+  <h1>Lisa Private Car. Vietnam</h1>
+<p>Premium private travel across Sa Pa, Ha Long, Hanoi & Ninh Binh</p>
+  <button onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book Now</button>
+</header>
 
-  <header>
-    <h1>Lisa Private Car Vietnam</h1>
-    <p>Premium, private travel across Sa Pa, Ha Long, Hanoi & Ninh Binh</p>
-    <a href="booking.html" class="btn">Book Now</a>
-  </header>
-
-  <main>
-    <h2>Popular Routes</h2>
-    <div class="route-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1549887534-3ec93abae07d?auto=format&fit=crop&w=800&q=60" alt="Sa Pa">
-        <h3>Hanoi ↔ Sa Pa</h3>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1586941938440-3794b1bbdc07?auto=format&fit=crop&w=800&q=60" alt="Ha Long">
-        <h3>Hanoi ↔ Ha Long</h3>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1605861931621-27c2e9eac0b4?auto=format&fit=crop&w=800&q=60" alt="Ninh Binh">
-        <h3>Hanoi ↔ Ninh Binh</h3>
-      </div>
+<section class="routes" id="routes">
+  <h2>Popular Routes</h2>
+  <div class="routes-grid">
+    <div class="route-card">
+      <img src="https://i.imgur.com/YR3DXxT.jpg" alt="Sa Pa" />
+      <h3>Sa Pa</h3>
     </div>
-  </main>
+    <div class="route-card">
+      <img src="https://i.imgur.com/lrm6E2F.jpg" alt="Ha Long" />
+      <h3>Ha Long</h3>
+    </div>
+    <div class="route-card">
+      <img src="https://i.imgur.com/7CxF6r3.jpg" alt="Ninh Binh" />
+      <h3>Ninh Binh</h3>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2025 Lisa Private Car Vietnam
-  </footer>
+<section id="book" style="max-width: 600px; margin: auto; padding: 40px 20px; background: white; box-shadow: 0 0 20px rgb(0 0 0 / 0.1); border-radius: 10px;">
+  <h2 style="text-align:center; margin-bottom: 25px; color:#212529;">Book Your Ride</h2>
+  <form>
+    <label for="name" style="display:block; margin-bottom: 5px;">Name</label>
+    <input id="name" type="text" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;" />
+
+    <label for="email" style="display:block; margin-bottom: 5px;">Email</label>
+<input id="email" type="email" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;" />
+
+    <label for="route" style="display:block; margin-bottom: 5px;">Select Route</label>
+    <select id="route" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+      <option value="">-- Choose a route --</option>
+      <option value="Sa Pa">Sa Pa</option>
+      <option value="Ha Long">Ha Long</option>
+      <option value="Ninh Binh">Ninh Binh</option>
+    </select>
+
+    <button type="submit" style="width: 100%; background: #ff5500; color: white; font-weight: 700; padding: 12px; border: none; border-radius: 25px; cursor: pointer;">Book Now</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Lisa Private Car Vietnam. All rights reserved.
+</footer>
 
 </body>
 </html>
 ```
+
+            
