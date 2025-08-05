@@ -5,66 +5,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Booking - Lisa Private Car Vietnam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
-    header { background: #004080; color: white; padding: 20px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    main { padding: 20px; max-width: 600px; margin: auto; }
-    label { display: block; margin-top: 15px; }
-    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
-    button { margin-top: 20px; padding: 10px 15px; background: #004080; color: white; border: none; cursor: pointer; }
-    button:hover { background: #003366; }
-footer { text-align: center; padding: 15px; background: #004080; color: white; margin-top: 30px;}
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+    nav a {
+      margin-left: 2rem;
+      color: #343a40;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #007bff;
+    }
+    main {
+      max-width: 700px;
+      background: white;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007bff;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 2rem;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #218838;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Lisa Private Car Vietnam</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="routes.html">Routes</a>
-      <a href="booking.html">Booking</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Book Your Private Car</h2>
-    <form id="bookingForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="Full Name" required />
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="Email" required />
-      
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="Phone Number" required />
-      
-      <label for="route">Select Route:</label>
-      <select id="route" name="Route" required>
-        <option value="">-- Select a route --</option>
-        <option value="Hanoi ↔ Sa Pa">Hanoi ↔ Sa Pa</option>
-        <option value="Hanoi ↔ Ha Long">Hanoi ↔ Ha Long</option>
-        <option value="Hanoi ↔ Ninh Binh">Hanoi ↔ Ninh Binh</option>
-        <option value="Sa Pa ↔ Ha Long">Sa Pa ↔ Ha Long</option>
-        <option value="Sa Pa ↔ Ninh Binh">Sa Pa ↔ Ninh Binh</option>
-</select>
-      
-      <label for="payment">Payment Method:</label>
-      <select id="payment" name="Payment Method" required>
-        <option value="">-- Select payment method --</option>
-        <option value="PayPal">PayPal</option>
-        <option value="VN Pay">VN Pay</option>
-        <option value="Cash">Cash</option>
-      </select>
-      
-      <label for="message">Additional Message (optional):</label>
-      <textarea id="message" name="Message" rows="4"></textarea>
-      
-      <button type="submit">Submit Booking</button>
-    </form>
-  </main>
-  <footer>
-    <p>© 2025 Lisa Private Car Vietnam</p>
-  </footer>
+<header>
+  <h1>Lisa Private Car</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="route.html">Routes</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Book Your Private Car</h2>
+  <form onsubmit="alert('Thank you for your booking request! We will contact you shortly.'); return false;">
+    <label for="name">Full Name</label>
+    <input id="name" type="text" required placeholder="Your full name" />
+    
+    <label for="email">Email Address</label>
+    <input id="email" type="email" required placeholder="you@example.com" />
+    
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" required placeholder="+84 9xx xxx xxx" />
+    
+    <label for="route">Select Route</label>
+    <select id="route" required>
+      <option value="" disabled selected>Choose a route</option>
+      <option>Hanoi ↔ Sapa</option>
+      <option>Hanoi ↔ Ha Long Bay</option>
+      <option>Hanoi ↔ Ninh Binh</option>
+      <option>Sapa ↔ Ninh Binh</option>
+    </select>
+    
+    <label for="date">Travel Date</label>
+    <input id="date" type="date" required />
+    
+    <label for="message">Additional Requests</label>
+    <textarea id="message" rows="4" placeholder="Anything else you want us to know?"></textarea>
+    
+    <button type="submit">Submit Booking</button>
+  </form>
+</main>
+
+<footer>
+  © 2025 Lisa Private Car Vietnam. Trusted private transport across Vietnam.
+</footer>
+
 </body>
 </html>
-```
