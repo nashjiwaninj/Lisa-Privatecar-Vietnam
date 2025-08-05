@@ -14,7 +14,6 @@
     body {
       background: #f8f9fa;
       color: #212529;
-      overflow-x: hidden;
     }
     header {
       background: #fff;
@@ -42,12 +41,12 @@
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1582108343602-04c0f6787c9a?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      background: url('https://cdn.pixabay.com/photo/2020/02/29/11/36/vietnam-4891392_1280.jpg') center/cover no-repeat;
       height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+   flex-direction: column;
       text-align: center;
       padding: 2rem;
       color: white;
@@ -58,7 +57,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.5);
     }
     .hero h2, .hero p {
       position: relative;
@@ -157,19 +156,7 @@
       font-size: 1.2rem;
       color: #343a40;
     }
-
-    footer {
-      background: #212529;
-      color: #dee2e6;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #ffc107;
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
+```html
   </style>
 </head>
 <body>
@@ -184,8 +171,8 @@
 
 <div class="hero">
   <h2>Explore Vietnam in Comfort</h2>
-  <p>Private car transfers from Hanoi to Sapa, Ha Long Bay, Ninh Binh and beyond – safe, flexible & beautiful.</p>
-  <a href="#search" class="btn">Start Your Trip</a>
+  <p>Private car transfers from Hanoi to Sapa, Ha Long Bay, Ninh Binh and more. Travel with ease and elegance.</p>
+  <a href="#search" class="btn">Start Your Journey</a>
 </div>
 
 <div class="search-box" id="search">
@@ -198,37 +185,36 @@
     <option>Sapa ↔ Ninh Binh</option>
   </select>
   <input type="date" />
-  <button onclick="alert('Redirecting to booking page...')">Check Availability</button>
+  <button onclick="alert('Redirecting to booking page…')">Check Availability</button>
 </div>
-```
-```html
+
 <div class="section">
   <h3>Top Destinations</h3>
   <div class="cards">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1605433560924-5df3f6dd8727?auto=format&fit=crop&w=800&q=60" alt="Sapa">
-      <h4>Sapa - Mountain Retreat</h4>
+      <img src="https://cdn.pixabay.com/photo/2020/11/03/17/29/sapa-5710743_1280.jpg" alt="Sapa">
+      <h4>Sapa – Mountain Escape</h4>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1597201364659-2074c110a32a?auto=format&fit=crop&w=800&q=60" alt="Ha Long Bay">
-      <h4>Ha Long Bay - Cruise Paradise</h4>
+      <img src="https://cdn.pixabay.com/photo/2018/09/18/06/58/halong-3686315_1280.jpg" alt="Ha Long Bay">
+      <h4>Ha Long – Cruise Paradise</h4>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1605052964702-7bb21271fa8c?auto=format&fit=crop&w=800&q=60" alt="Ninh Binh">
-      <h4>Ninh Binh - Ancient & Scenic</h4>
+      <img src="https://cdn.pixabay.com/photo/2016/10/28/23/01/vietnam-1788437_1280.jpg" alt="Ninh Binh">
+      <h4>Ninh Binh – Scenic Heaven</h4>
     </div>
   </div>
 </div>
 
 <div class="section" id="contact">
   <h3>Contact & Booking</h3>
-  <p>📞 WhatsApp: <a href="https://wa.me/84966974056" target="_blank">+84 966 974 056</a></p>
-  <p>✉️ Email: <a href="mailto:hodieuno@gmail.com">hodieuno@gmail.com</a></p>
-  <p>💳 Payment: PayPal, VNPay, Cash</p>
+  <p>📞 <strong>WhatsApp:</strong> <a href="https://wa.me/84966974056" target="_blank">+84 966 974 056</a></p>
+  <p>✉️ <strong>Email:</strong> <a href="mailto:hodieuno@gmail.com">hodieuno@gmail.com</a></p>
+  <p>💳 <strong>Payment:</strong> PayPal, VNPay, or Cash</p>
 </div>
 
 <footer>
-  © 2025 Lisa Private Car Vietnam. Built with 💙 by Master Dev.
+  © 2025 Lisa Private Car Vietnam. Trusted private transport across Vietnam.
 </footer>
 
 </body>
