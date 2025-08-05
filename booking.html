@@ -1,0 +1,70 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking - Lisa Private Car Vietnam</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+    header { background: #004080; color: white; padding: 20px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    main { padding: 20px; max-width: 600px; margin: auto; }
+    label { display: block; margin-top: 15px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    button { margin-top: 20px; padding: 10px 15px; background: #004080; color: white; border: none; cursor: pointer; }
+    button:hover { background: #003366; }
+footer { text-align: center; padding: 15px; background: #004080; color: white; margin-top: 30px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lisa Private Car Vietnam</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="routes.html">Routes</a>
+      <a href="booking.html">Booking</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Book Your Private Car</h2>
+    <form id="bookingForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="Full Name" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="Email" required />
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="Phone Number" required />
+      
+      <label for="route">Select Route:</label>
+      <select id="route" name="Route" required>
+        <option value="">-- Select a route --</option>
+        <option value="Hanoi ↔ Sa Pa">Hanoi ↔ Sa Pa</option>
+        <option value="Hanoi ↔ Ha Long">Hanoi ↔ Ha Long</option>
+        <option value="Hanoi ↔ Ninh Binh">Hanoi ↔ Ninh Binh</option>
+        <option value="Sa Pa ↔ Ha Long">Sa Pa ↔ Ha Long</option>
+        <option value="Sa Pa ↔ Ninh Binh">Sa Pa ↔ Ninh Binh</option>
+</select>
+      
+      <label for="payment">Payment Method:</label>
+      <select id="payment" name="Payment Method" required>
+        <option value="">-- Select payment method --</option>
+        <option value="PayPal">PayPal</option>
+        <option value="VN Pay">VN Pay</option>
+        <option value="Cash">Cash</option>
+      </select>
+      
+      <label for="message">Additional Message (optional):</label>
+      <textarea id="message" name="Message" rows="4"></textarea>
+      
+      <button type="submit">Submit Booking</button>
+    </form>
+  </main>
+  <footer>
+    <p>© 2025 Lisa Private Car Vietnam</p>
+  </footer>
+</body>
+</html>
+```
